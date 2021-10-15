@@ -1,9 +1,6 @@
 package br.com.letscode.quizkotlin.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table
@@ -15,12 +12,12 @@ data class Filme(
     )
 
 @Entity
-@Table
+@Table(uniqueConstraints = [UniqueConstraint(columnNames = ["login"])])
 data class Usuario(
-    @Id @GeneratedValue val id: Int,
+    @Id @GeneratedValue val id: Int = 0,
     val nome: String,
-    val login: String,
+    @Column(name = "login") val login: String,
     val senha: String,
-    val qntVida: Int,
-    val pontos: Int
+    val qntVida: Int = 3,
+    val pontos: Int = 0
     )
