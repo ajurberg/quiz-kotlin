@@ -6,7 +6,12 @@ data class UsuarioDTO(
     )
 
 data class UsuarioCreateDTO(
-    val nome: String = "",
-    val login: String = "",
+    val nome: String,
+    val login: String,
     val senha: String = ""
+)
+
+data class UsuarioAutenticacaoDTO(
+    val login: String,
+    val senha: String
 )

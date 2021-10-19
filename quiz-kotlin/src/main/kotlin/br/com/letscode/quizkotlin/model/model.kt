@@ -12,7 +12,7 @@ data class Filme(
     )
 
 @Entity
-@Table(uniqueConstraints = [UniqueConstraint(columnNames = ["login"])])
+@Table
 data class Usuario(
     @Id @GeneratedValue val id: Int = 0,
     val nome: String,
